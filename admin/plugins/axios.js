@@ -1,5 +1,7 @@
 import axios from "axios";
-const Cookie = process.client ? require("js-cookie") : undefined;
+const Cookie = (window.Cookie = process.client
+  ? require("js-cookie")
+  : undefined);
 window.axios = axios;
 export default ({ app, store, redirect }) => {
   axios.defaults.baseURL = process.env.apiUrl;

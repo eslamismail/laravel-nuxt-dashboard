@@ -5,7 +5,7 @@
         <div class="page-header">
           <h4 class="page-title">Starter Template</h4>
         </div>
-        <div class="page-category">Index Description</div>
+        <div class="page-category">Profile Description</div>
       </div>
     </div>
   </div>
@@ -13,7 +13,10 @@
 
 <script>
 export default {
-  layout: "app"
+  layout: "app",
+  head: {
+    title: "Admin Profile"
+  }
 };
 </script>
 

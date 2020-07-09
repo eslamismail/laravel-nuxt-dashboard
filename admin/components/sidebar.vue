@@ -21,19 +21,24 @@
             <div class="collapse in" id="collapseExample">
               <ul class="nav">
                 <li>
-                  <a href="#profile">
+                  <nuxt-link to="/profile">
                     <span class="link-collapse">My Profile</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#edit">
+                  <nuxt-link to="/profile">
                     <span class="link-collapse">Edit Profile</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#settings">
+                  <nuxt-link to="/setting">
                     <span class="link-collapse">Settings</span>
-                  </a>
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link to="/login">
+                    <span class="link-collapse">Login</span>
+                  </nuxt-link>
                 </li>
               </ul>
             </div>
@@ -51,12 +56,6 @@
             <nuxt-link to="/test">
               <i class="fas fa-home"></i>
               <p>test</p>
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/login">
-              <i class="fas fa-user"></i>
-              <span class="sub-item">Login & Register 1</span>
             </nuxt-link>
           </li>
         </ul>

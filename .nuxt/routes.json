@@ -7,11 +7,25 @@
     "_name": "_5dfb90a3"
   },
   {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_6ef26b3a"
+  },
+  {
     "name": "register",
     "path": "/register",
     "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/register.vue",
     "chunkName": "pages/register",
     "_name": "_c794bd4e"
+  },
+  {
+    "name": "setting",
+    "path": "/setting",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/setting.vue",
+    "chunkName": "pages/setting",
+    "_name": "_92b2b8ec"
   },
   {
     "name": "index",

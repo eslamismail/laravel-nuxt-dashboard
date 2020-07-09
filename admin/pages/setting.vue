@@ -5,7 +5,7 @@
         <div class="page-header">
           <h4 class="page-title">Starter Template</h4>
         </div>
-        <div class="page-category">Index Description</div>
+        <div class="page-category">Setting Description</div>
       </div>
     </div>
   </div>
@@ -13,7 +13,13 @@
 
 <script>
 export default {
-  layout: "app"
+  layout: "app",
+  head: {
+    title: "Admin Setting"
+  },
+  beforeRouteLeave(to, from, next) {
+    next();
+  }
 };
 </script>
 
