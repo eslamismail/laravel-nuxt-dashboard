@@ -1,0 +1,23 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_5dfb90a3"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/register.vue",
+    "chunkName": "pages/register",
+    "_name": "_c794bd4e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_d75824e8"
+  }
+]
