@@ -37,7 +37,7 @@
                 </li>
                 <li>
                   <nuxt-link to="/login">
-                    <span class="link-collapse">Login</span>
+                    <span class="link-collapse">Logout</span>
                   </nuxt-link>
                 </li>
               </ul>
@@ -45,17 +45,22 @@
           </div>
         </div>
         <ul class="nav">
-          <li class="nav-item active">
+          <li :class="`nav-item ${isActive('index')}`">
             <nuxt-link to="/">
               <i class="fas fa-home"></i>
               <p>Dashboard</p>
-              <span class="badge badge-count">5</span>
             </nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link to="/test">
-              <i class="fas fa-home"></i>
-              <p>test</p>
+          <li :class="`nav-item ${isActive('user')}`">
+            <nuxt-link to="/user">
+              <i class="fas fa-users"></i>
+              <p>User</p>
+            </nuxt-link>
+          </li>
+          <li :class="`nav-item ${isActive('admin')}`">
+            <nuxt-link to="/admin">
+              <i class="fas fa-user"></i>
+              <p>Admin</p>
             </nuxt-link>
           </li>
         </ul>
@@ -66,6 +71,15 @@
 </template>
 <script>
 export default {
-  mounted() {}
+  mounted() {},
+  methods: {
+    isActive(name) {
+      let pathName = this.$route.name;
+      if (name === pathName) {
+        return "active";
+      }
+      return null;
+    }
+  }
 };
 </script>

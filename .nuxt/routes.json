@@ -1,5 +1,12 @@
 [
   {
+    "name": "admin",
+    "path": "/admin",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "_name": "_74797cee"
+  },
+  {
     "name": "login",
     "path": "/login",
     "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/login.vue",
@@ -26,6 +33,13 @@
     "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/setting.vue",
     "chunkName": "pages/setting",
     "_name": "_92b2b8ec"
+  },
+  {
+    "name": "user",
+    "path": "/user",
+    "component": "/home/eslam/projects/freelance/dry_clean/admin/pages/user.vue",
+    "chunkName": "pages/user",
+    "_name": "_b861ecfe"
   },
   {
     "name": "index",

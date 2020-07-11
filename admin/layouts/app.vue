@@ -15,7 +15,7 @@ export default {
     AdminSidebar
   },
   head: {
-    title: "Dashboard",
+    title: "Control Panel",
     script: [{ src: "/assets/js/ready.min.js", body: true }]
   },
   created() {

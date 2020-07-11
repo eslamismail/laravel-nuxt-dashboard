@@ -219,7 +219,7 @@
                 <a class="dropdown-item" href="#">My Balance</a>
                 <a class="dropdown-item" href="#">Inbox</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Account Setting</a>
+                <nuxt-link class="dropdown-item" to="/setting">Account Setting</nuxt-link>
                 <div class="dropdown-divider"></div>
                 <nuxt-link class="dropdown-item" to="/login">Logout</nuxt-link>
               </li>

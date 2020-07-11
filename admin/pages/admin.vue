@@ -5,7 +5,7 @@
         <div class="page-header">
           <h4 class="page-title">Starter Template</h4>
         </div>
-        <div class="page-category">Setting Description</div>
+        <div class="page-category">admin Description</div>
       </div>
     </div>
   </div>
@@ -15,10 +15,7 @@
 export default {
   layout: "app",
   head: {
-    title: "Dashboard Setting"
-  },
-  beforeRouteLeave(to, from, next) {
-    next();
+    title: "Dashboard Admins"
   }
 };
 </script>
