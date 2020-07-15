@@ -8,6 +8,7 @@ import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
+import { createStore } from './store.js'
 
 /* Plugins */
 
@@ -45,6 +46,10 @@ const defaultTransition = {"name":"page","mode":"out-in","appear":true,"appearCl
 async function createApp(ssrContext, config = {}) {
   const router = await createRouter(ssrContext)
 
+  const store = createStore(ssrContext)
+  // Add this.$router into store actions/mutations
+  store.$router = router
+
   // Create Root instance
 
   // here we inject the router and store to all child components,
@@ -52,6 +57,7 @@ async function createApp(ssrContext, config = {}) {
   const app = {
     head: {"title":"admin","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My majestic Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Fassets\u002Fimg\u002Ficon.ico"},{"href":"\u002Fassets\u002Fcss\u002Fbootstrap.min.css","rel":"stylesheet"},{"href":"\u002Fassets\u002Fcss\u002Fazzara.min.css","rel":"stylesheet"}],"script":[{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fwebfont\u002Fwebfont.min.js"},{"body":true,"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fjquery.3.2.1.min.js"},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fpopper.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fbootstrap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-1.12.1.custom\u002Fjquery-ui.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-touch-punch\u002Fjquery.ui.touch-punch.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-scrollbar\u002Fjquery.scrollbar.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fmoment\u002Fmoment.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart.js\u002Fchart.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery.sparkline\u002Fjquery.sparkline.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart-circle\u002Fcircles.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fdatatables\u002Fdatatables.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-notify\u002Fbootstrap-notify.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-toggle\u002Fbootstrap-toggle.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fjquery.vmap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fmaps\u002Fjquery.vmap.world.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fgmaps\u002Fgmaps.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fsweetalert\u002Fsweetalert.min.js","body":true}],"style":[]},
 
+    store,
     router,
     nuxt: {
       defaultTransition,
@@ -96,6 +102,9 @@ async function createApp(ssrContext, config = {}) {
     ...App
   }
 
+  // Make app available into store via this.app
+  store.app = app
+
   const next = ssrContext ? ssrContext.next : location => app.router.push(location)
   // Resolve route
   let route
@@ -108,6 +117,7 @@ async function createApp(ssrContext, config = {}) {
 
   // Set context to app.context
   await setContext(app, {
+    store,
     route,
     next,
     error: app.nuxt.error.bind(app),
@@ -134,6 +144,9 @@ async function createApp(ssrContext, config = {}) {
       app.context[key] = value
     }
 
+    // Add into store
+    store[key] = app[key]
+
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
     if (Vue[installKey]) {
@@ -154,6 +167,13 @@ async function createApp(ssrContext, config = {}) {
 
   // Inject runtime config as $config
   inject('config', config)
+
+  if (process.client) {
+    // Replace store state before plugins execution
+    if (window.__NUXT__ && window.__NUXT__.state) {
+      store.replaceState(window.__NUXT__.state)
+    }
+  }
 
   // Add enablePreview(previewData = {}) in context for plugins
   if (process.static && process.client) {
@@ -193,6 +213,7 @@ async function createApp(ssrContext, config = {}) {
   }
 
   return {
+    store,
     app,
     router
   }

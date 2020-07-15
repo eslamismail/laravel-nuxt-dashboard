@@ -3,42 +3,46 @@
   "all": [
     "../server/index.spa.html",
     "LICENSES",
-    "app.75fb85c.js",
+    "app.3abe8d0.js",
     "app.eeb4c2a.css",
-    "commons/app.eea4b16.js",
+    "commons/app.c43bb98.js",
     "pages/admin.6e3a0fa.js",
-    "pages/index.9dafaaf.js",
-    "pages/login.1f92d00.js",
-    "pages/profile.5f080af.js",
-    "pages/register.6380293.js",
-    "pages/setting.7001997.js",
-    "pages/user.bed3d8e.js",
-    "runtime.b532976.js"
+    "pages/index.62f6ae4.js",
+    "pages/login.14f68ac.js",
+    "pages/profile.b2baa22.js",
+    "pages/register.c9edc01.js",
+    "pages/setting.e2a90e7.js",
+    "pages/user.b5481f3.js",
+    "runtime.dd74021.js"
   ],
   "initial": [
-    "runtime.b532976.js",
-    "commons/app.eea4b16.js",
+    "runtime.dd74021.js",
+    "commons/app.c43bb98.js",
     "app.eeb4c2a.css",
-    "app.75fb85c.js"
+    "app.3abe8d0.js"
   ],
   "async": [
     "pages/admin.6e3a0fa.js",
-    "pages/index.9dafaaf.js",
-    "pages/login.1f92d00.js",
-    "pages/profile.5f080af.js",
-    "pages/register.6380293.js",
-    "pages/setting.7001997.js",
-    "pages/user.bed3d8e.js"
+    "pages/index.62f6ae4.js",
+    "pages/login.14f68ac.js",
+    "pages/profile.b2baa22.js",
+    "pages/register.c9edc01.js",
+    "pages/setting.e2a90e7.js",
+    "pages/user.b5481f3.js"
   ],
   "modules": {
     "15427152": [
       4
     ],
+    "18967694": [
+      3,
+      2
+    ],
+    "26198754": [
+      4
+    ],
     "53725806": [
       7
-    ],
-    "59765464": [
-      6
     ],
     "4464e678": [
       3,
@@ -101,6 +105,10 @@
       2
     ],
     "739b08f4": [
+      3,
+      2
+    ],
+    "56c6c9e0": [
       3,
       2
     ],
@@ -241,6 +249,9 @@
     "49aae214": [
       4
     ],
+    "07887004": [
+      4
+    ],
     "e2616346": [
       4
     ],
@@ -265,9 +276,6 @@
     "6eb05ab8": [
       3,
       2
-    ],
-    "07887004": [
-      4
     ],
     "27d6f4c9": [
       4
@@ -419,18 +427,11 @@
     "133c965b": [
       4
     ],
-    "a579a8fe": [
-      4
-    ],
     "76b2f4c7": [
       3,
       2
     ],
     "8ec8f414": [
-      3,
-      2
-    ],
-    "56c6c9e0": [
       3,
       2
     ],
@@ -498,6 +499,9 @@
       4
     ],
     "13b65c55": [
+      4
+    ],
+    "a579a8fe": [
       4
     ],
     "7678b3ca": [
@@ -668,6 +672,10 @@
       3,
       2
     ],
+    "4d771913": [
+      3,
+      2
+    ],
     "2701d116": [
       4
     ],
@@ -722,10 +730,13 @@
     "156f28da": [
       6
     ],
-    "2c1c3c72": [
+    "70c5f653": [
       6
     ],
     "88cac198": [
+      6
+    ],
+    "c3bfe376": [
       6
     ],
     "0b78f990": [
@@ -779,29 +790,17 @@
     "6fc06a31": [
       8
     ],
-    "dd0215e8": [
+    "d8930bac": [
       8
     ],
     "6a420106": [
       8
     ],
-    "5e9a4f04": [
+    "5a2b44c8": [
       8
     ],
     "02def281": [
       8
-    ],
-    "41d2681e": [
-      7
-    ],
-    "f9059d48": [
-      7
-    ],
-    "9e516d64": [
-      7
-    ],
-    "14efb801": [
-      7
     ],
     "46de7cd7": [
       5
@@ -818,6 +817,18 @@
     "3d6eb5db": [
       5
     ],
+    "41d2681e": [
+      7
+    ],
+    "6c1450c3": [
+      7
+    ],
+    "cd232e96": [
+      7
+    ],
+    "14efb801": [
+      7
+    ],
     "173a24ec": [
       3,
       2
@@ -829,34 +840,34 @@
   },
   "assetsMapping": {
     "1a3ae26b": [
-      "app.75fb85c.js"
+      "app.3abe8d0.js"
     ],
     "085a35c4": [
-      "commons/app.eea4b16.js"
+      "commons/app.c43bb98.js"
     ],
     "2afd58e4": [
       "pages/admin.6e3a0fa.js"
     ],
     "2a130dde": [
-      "pages/index.9dafaaf.js"
+      "pages/index.62f6ae4.js"
     ],
     "29bd80b0": [
-      "pages/login.1f92d00.js"
+      "pages/login.14f68ac.js"
     ],
     "fe1273b0": [
-      "pages/profile.5f080af.js"
+      "pages/profile.b2baa22.js"
     ],
     "9f08fbf8": [
-      "pages/register.6380293.js"
+      "pages/register.c9edc01.js"
     ],
     "09c74acf": [
-      "pages/setting.7001997.js"
+      "pages/setting.e2a90e7.js"
     ],
     "b6fdd0a8": [
-      "pages/user.bed3d8e.js"
+      "pages/user.b5481f3.js"
     ],
     "6fca0322": [
-      "runtime.b532976.js"
+      "runtime.dd74021.js"
     ]
   }
 }

@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper wrapper-login">
+  <form @submit.prevent="login" class="wrapper wrapper-login">
     <div class="container container-login animated fadeIn">
       <h3 class="text-center">Sign In To Admin</h3>
       <div class="login-form">
         <div class="form-group form-floating-label">
           <input
-            id="username"
-            name="username"
+            id="email"
+            name="email"
             type="text"
             class="form-control input-border-bottom"
             required
@@ -35,8 +35,7 @@
           <a href="#" class="link float-right">Forget Password ?</a>
         </div>
         <div class="form-action mb-3">
-          <!-- <a href="#" class="btn btn-primary btn-rounded btn-login">Sign In</a> -->
-          <nuxt-link to="/" class="btn btn-primary btn-rounded shadow-lg btn-login">Sign In</nuxt-link>
+          <button type="submit" class="btn btn-primary btn-rounded shadow-lg btn-login">Sign In</button>
         </div>
         <div class="login-account">
           <span class="msg">Don't have an account yet ?</span>
@@ -44,13 +43,65 @@
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   layout: "simple",
   head: {
     title: "Admin Login"
+  },
+  computed: {
+    token() {
+      return this.$store.state.auth;
+    }
+  },
+  mounted() {},
+  methods: {
+    login() {
+      event.preventDefault();
+      let form = new FormData(event.target);
+      axios
+        .post("/login", form)
+        .then(response => {
+          let admin = response.data.admin;
+          Cookie.set("auth", response.data.admin.accessToken);
+          this.$store.commit("setAuth", response.data.admin.accessToken);
+          $.notify(`Welcome back `, {
+            type: "success",
+            time: 100,
+            delay: 5000
+          });
+          this.$router.push("/");
+        })
+        .catch(error => {
+          if (!error.response) {
+            $.notify(`No internet connection `, {
+              type: "danger",
+              time: 100,
+              delay: 5000
+            });
+          } else if (
+            error.response.status == 422 ||
+            error.response.status == 401
+          ) {
+            $.notify(`${error.response.data.message}`, {
+              type: "danger",
+              time: 100,
+              delay: 5000
+            });
+          } else {
+            $.notify(`${error.response.statusCode}`, {
+              type: "danger",
+              time: 100,
+              delay: 5000
+            });
+          }
+          console.log(error);
+        });
+    }
   }
 };
 </script>
