@@ -131,7 +131,7 @@
               aria-expanded="false"
             >
               <i class="fa fa-bell"></i>
-              <span class="notification">4</span>
+              <!-- <span class="notification">45</span> -->
             </a>
             <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
               <li>
@@ -221,7 +221,7 @@
                 <div class="dropdown-divider"></div>
                 <nuxt-link class="dropdown-item" to="/setting">Account Setting</nuxt-link>
                 <div class="dropdown-divider"></div>
-                <nuxt-link class="dropdown-item" to="/login">Logout</nuxt-link>
+                <a href="#" @click.prevent="logout()" class="dropdown-item">Logout</a>
               </li>
             </ul>
           </li>
@@ -233,6 +233,11 @@
 </template>
 <script>
 export default {
-  mounted() {}
+  mounted() {},
+  methods: {
+    logout: function() {
+      this.$store.commit("removeToken");
+    }
+  }
 };
 </script>

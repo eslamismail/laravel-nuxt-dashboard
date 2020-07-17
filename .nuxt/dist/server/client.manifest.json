@@ -3,38 +3,40 @@
   "all": [
     "../server/index.spa.html",
     "LICENSES",
-    "app.3abe8d0.js",
+    "app.2b871e0.js",
     "app.eeb4c2a.css",
-    "commons/app.c43bb98.js",
-    "pages/admin.6e3a0fa.js",
-    "pages/index.62f6ae4.js",
-    "pages/login.14f68ac.js",
-    "pages/profile.b2baa22.js",
-    "pages/register.c9edc01.js",
-    "pages/setting.e2a90e7.js",
-    "pages/user.b5481f3.js",
-    "runtime.dd74021.js"
+    "commons/app.284526b.js",
+    "pages/admin.2fcbc88.js",
+    "pages/index.235f337.js",
+    "pages/login.980999d.js",
+    "pages/profile.a4e8492.js",
+    "pages/setting.d81a257.js",
+    "pages/user.7b6d946.js",
+    "runtime.4afdaeb.js"
   ],
   "initial": [
-    "runtime.dd74021.js",
-    "commons/app.c43bb98.js",
+    "runtime.4afdaeb.js",
+    "commons/app.284526b.js",
     "app.eeb4c2a.css",
-    "app.3abe8d0.js"
+    "app.2b871e0.js"
   ],
   "async": [
-    "pages/admin.6e3a0fa.js",
-    "pages/index.62f6ae4.js",
-    "pages/login.14f68ac.js",
-    "pages/profile.b2baa22.js",
-    "pages/register.c9edc01.js",
-    "pages/setting.e2a90e7.js",
-    "pages/user.b5481f3.js"
+    "pages/admin.2fcbc88.js",
+    "pages/index.235f337.js",
+    "pages/login.980999d.js",
+    "pages/profile.a4e8492.js",
+    "pages/setting.d81a257.js",
+    "pages/user.7b6d946.js"
   ],
   "modules": {
     "15427152": [
       4
     ],
     "18967694": [
+      3,
+      2
+    ],
+    "22069965": [
       3,
       2
     ],
@@ -64,6 +66,9 @@
       4
     ],
     "7d4eae59": [
+      4
+    ],
+    "62e28070": [
       4
     ],
     "70d61efb": [
@@ -196,7 +201,7 @@
       3,
       2
     ],
-    "aeea6c0e": [
+    "039f80d4": [
       3,
       2
     ],
@@ -204,7 +209,7 @@
       3,
       2
     ],
-    "679bc09e": [
+    "8a87b4d2": [
       3,
       2
     ],
@@ -212,15 +217,11 @@
       3,
       2
     ],
-    "c948b72a": [
+    "1dfdcbf0": [
       3,
       2
     ],
     "e8db758e": [
-      3,
-      2
-    ],
-    "337c937f": [
       3,
       2
     ],
@@ -238,9 +239,6 @@
       4
     ],
     "654f4aeb": [
-      4
-    ],
-    "62e28070": [
       4
     ],
     "d36cf5ec": [
@@ -265,6 +263,9 @@
       4
     ],
     "cb5d389a": [
+      4
+    ],
+    "2af2cc96": [
       4
     ],
     "7ee4cf4e": [
@@ -299,9 +300,6 @@
       4
     ],
     "1667d648": [
-      4
-    ],
-    "2af2cc96": [
       4
     ],
     "8f63e666": [
@@ -724,83 +722,35 @@
     "2a3ee8e5": [
       4
     ],
-    "78d204d2": [
-      4
-    ],
     "156f28da": [
       6
     ],
-    "70c5f653": [
+    "7bf73488": [
       6
     ],
     "88cac198": [
       6
     ],
-    "c3bfe376": [
+    "ad5d670c": [
       6
     ],
     "0b78f990": [
       6
     ],
     "23d82c73": [
-      11
+      10
     ],
     "ee163a8e": [
-      11
+      10
     ],
     "582fc4ee": [
-      11
+      10
     ],
     "58df0487": [
-      11
+      10
     ],
     "6250a905": [
-      11
-    ],
-    "5de04358": [
       10
-    ],
-    "710b4e92": [
-      10
-    ],
-    "2d30f036": [
-      10
-    ],
-    "9f819bf8": [
-      10
-    ],
-    "6530e33a": [
-      10
-    ],
-    "47a0096a": [
-      9
-    ],
-    "df52773c": [
-      9
-    ],
-    "76ccae31": [
-      9
-    ],
-    "379f4f30": [
-      9
-    ],
-    "3ecb1bad": [
-      9
-    ],
-    "6fc06a31": [
-      8
-    ],
-    "d8930bac": [
-      8
-    ],
-    "6a420106": [
-      8
-    ],
-    "5a2b44c8": [
-      8
-    ],
-    "02def281": [
-      8
     ],
     "46de7cd7": [
       5
@@ -820,14 +770,44 @@
     "41d2681e": [
       7
     ],
-    "6c1450c3": [
+    "29f1c2ca": [
       7
     ],
-    "cd232e96": [
+    "574bdabc": [
       7
     ],
     "14efb801": [
       7
+    ],
+    "6fc06a31": [
+      8
+    ],
+    "d8930bac": [
+      8
+    ],
+    "6a420106": [
+      8
+    ],
+    "5a2b44c8": [
+      8
+    ],
+    "02def281": [
+      8
+    ],
+    "5de04358": [
+      9
+    ],
+    "710b4e92": [
+      9
+    ],
+    "2d30f036": [
+      9
+    ],
+    "9f819bf8": [
+      9
+    ],
+    "6530e33a": [
+      9
     ],
     "173a24ec": [
       3,
@@ -840,34 +820,31 @@
   },
   "assetsMapping": {
     "1a3ae26b": [
-      "app.3abe8d0.js"
+      "app.2b871e0.js"
     ],
     "085a35c4": [
-      "commons/app.c43bb98.js"
+      "commons/app.284526b.js"
     ],
     "2afd58e4": [
-      "pages/admin.6e3a0fa.js"
+      "pages/admin.2fcbc88.js"
     ],
     "2a130dde": [
-      "pages/index.62f6ae4.js"
+      "pages/index.235f337.js"
     ],
     "29bd80b0": [
-      "pages/login.14f68ac.js"
+      "pages/login.980999d.js"
     ],
     "fe1273b0": [
-      "pages/profile.b2baa22.js"
-    ],
-    "9f08fbf8": [
-      "pages/register.c9edc01.js"
+      "pages/profile.a4e8492.js"
     ],
     "09c74acf": [
-      "pages/setting.e2a90e7.js"
+      "pages/setting.d81a257.js"
     ],
     "b6fdd0a8": [
-      "pages/user.b5481f3.js"
+      "pages/user.7b6d946.js"
     ],
     "6fca0322": [
-      "runtime.dd74021.js"
+      "runtime.4afdaeb.js"
     ]
   }
 }

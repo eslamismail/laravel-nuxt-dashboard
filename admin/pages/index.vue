@@ -629,7 +629,8 @@ export default {
   layout: "app",
   head: {
     title: "Dashnoard Index"
-  }
+  },
+  mounted() {}
 };
 </script>
 

@@ -32,31 +32,20 @@
             <label class="custom-control-label" for="rememberme">Remember Me</label>
           </div>
 
-          <a href="#" class="link float-right">Forget Password ?</a>
+          <!-- <a href="#" class="link float-right">Forget Password ?</a> -->
         </div>
         <div class="form-action mb-3">
           <button type="submit" class="btn btn-primary btn-rounded shadow-lg btn-login">Sign In</button>
-        </div>
-        <div class="login-account">
-          <span class="msg">Don't have an account yet ?</span>
-          <nuxt-link to="/register" class="link">Sign Up</nuxt-link>
         </div>
       </div>
     </div>
   </form>
 </template>
 <script>
-import { mapMutations } from "vuex";
-
 export default {
   layout: "simple",
   head: {
     title: "Admin Login"
-  },
-  computed: {
-    token() {
-      return this.$store.state.auth;
-    }
   },
   mounted() {},
   methods: {
@@ -67,14 +56,12 @@ export default {
         .post("/login", form)
         .then(response => {
           let admin = response.data.admin;
-          Cookie.set("auth", response.data.admin.accessToken);
           this.$store.commit("setAuth", response.data.admin.accessToken);
-          $.notify(`Welcome back `, {
+          $.notify(`Welcome back`, {
             type: "success",
             time: 100,
             delay: 5000
           });
-          this.$router.push("/");
         })
         .catch(error => {
           if (!error.response) {
@@ -83,6 +70,7 @@ export default {
               time: 100,
               delay: 5000
             });
+            console.log(error);
           } else if (
             error.response.status == 422 ||
             error.response.status == 401
@@ -92,6 +80,7 @@ export default {
               time: 100,
               delay: 5000
             });
+            this.$store.commit("removeToken");
           } else {
             $.notify(`${error.response.statusCode}`, {
               type: "danger",

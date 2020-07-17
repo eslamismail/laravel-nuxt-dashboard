@@ -36,9 +36,9 @@
                   </nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/login">
+                  <a href="#" @click.prevent="logout()">
                     <span class="link-collapse">Logout</span>
-                  </nuxt-link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -73,6 +73,9 @@
 export default {
   mounted() {},
   methods: {
+    logout: function() {
+      this.$store.commit("removeToken");
+    },
     isActive(name) {
       let pathName = this.$route.name;
       if (name === pathName) {
