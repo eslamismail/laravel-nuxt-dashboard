@@ -16,7 +16,8 @@
         "css-loader": "^3.6.0",
         "dotenv": "^8.2.0",
         "fs-extra": "^9.0.1",
-        "nuxt": "^2.0.0"
+        "nuxt": "^2.0.0",
+        "v-datatable-light": "^0.8.1"
     },
     "devDependencies": {}
 }

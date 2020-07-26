@@ -13,6 +13,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_axios_fb9c9a02 from 'nuxt_plugin_axios_fb9c9a02' // Source: ../admin/plugins/axios (mode: 'all')
+import nuxt_plugin_datatable_71e0c06d from 'nuxt_plugin_datatable_71e0c06d' // Source: ../admin/plugins/datatable (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -186,6 +187,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_axios_fb9c9a02 === 'function') {
     await nuxt_plugin_axios_fb9c9a02(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_datatable_71e0c06d === 'function') {
+    await nuxt_plugin_datatable_71e0c06d(app.context, inject)
   }
 
   // Lock enablePreview in context

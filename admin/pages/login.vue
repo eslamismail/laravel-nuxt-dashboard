@@ -12,6 +12,7 @@
             required
           />
           <label for="username" class="placeholder">Username</label>
+          <error :errors="errors.email" v-if=" errors && errors.email" />
         </div>
         <div class="form-group form-floating-label">
           <input
@@ -19,12 +20,12 @@
             name="password"
             type="password"
             class="form-control input-border-bottom"
-            required
           />
           <label for="password" class="placeholder">Password</label>
           <div class="show-password">
             <i class="flaticon-interface"></i>
           </div>
+          <error :errors="errors.password" v-if="errors && errors.password" />
         </div>
         <div class="row form-sub m-0">
           <div class="custom-control custom-checkbox">
@@ -42,10 +43,17 @@
   </form>
 </template>
 <script>
+import Error from "../components/errors";
 export default {
+  components: { Error },
   layout: "simple",
   head: {
     title: "Admin Login"
+  },
+  data() {
+    return {
+      errors: null
+    };
   },
   mounted() {},
   methods: {
@@ -55,6 +63,7 @@ export default {
       axios
         .post("/login", form)
         .then(response => {
+          this.errors = {};
           let admin = response.data.admin;
           this.$store.commit("setAuth", response.data.admin.accessToken);
           $.notify(`Welcome back`, {
@@ -75,12 +84,16 @@ export default {
             error.response.status == 422 ||
             error.response.status == 401
           ) {
+            let errors = error.response.data.errors;
+            if (errors) {
+              this.errors = errors;
+            }
             $.notify(`${error.response.data.message}`, {
               type: "danger",
               time: 100,
               delay: 5000
             });
-            this.$store.commit("removeToken");
+            // this.$store.commit("removeToken");
           } else {
             $.notify(`${error.response.statusCode}`, {
               type: "danger",

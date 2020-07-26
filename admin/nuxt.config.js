@@ -15,55 +15,55 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
-      },
+        content: process.env.npm_package_description || ""
+      }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/assets/img/icon.ico" },
       { href: "/assets/css/bootstrap.min.css", rel: "stylesheet" },
-      { href: "/assets/css/azzara.min.css", rel: "stylesheet" },
+      { href: "/assets/css/azzara.min.css", rel: "stylesheet" }
     ],
     script: [
       {
-        src: "/assets/js/plugin/webfont/webfont.min.js",
+        src: "/assets/js/plugin/webfont/webfont.min.js"
       },
       { body: true, src: "/assets/js/core/jquery.3.2.1.min.js" },
       { src: "/assets/js/core/popper.min.js", body: true },
       { src: "/assets/js/core/bootstrap.min.js", body: true },
       {
         src: "/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js",
-        body: true,
+        body: true
       },
       {
         src:
           "/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js",
-        body: true,
+        body: true
       },
       {
         src: "/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js",
-        body: true,
+        body: true
       },
       { src: "/assets/js/plugin/moment/moment.min.js", body: true },
       { src: "/assets/js/plugin/chart.js/chart.min.js", body: true },
       {
         src: "/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js",
-        body: true,
+        body: true
       },
       { src: "/assets/js/plugin/chart-circle/circles.min.js", body: true },
       { src: "/assets/js/plugin/datatables/datatables.min.js", body: true },
       {
         src: "/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js",
-        body: true,
+        body: true
       },
       {
         src: "/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js",
-        body: true,
+        body: true
       },
       { src: "/assets/js/plugin/jqvmap/jquery.vmap.min.js", body: true },
       { src: "/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js", body: true },
       { src: "/assets/js/plugin/gmaps/gmaps.js", body: true },
-      { src: "/assets/js/plugin/sweetalert/sweetalert.min.js", body: true },
-    ],
+      { src: "/assets/js/plugin/sweetalert/sweetalert.min.js", body: true }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -76,7 +76,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~plugins/axios" }],
+  plugins: [{ src: "~plugins/axios" }, { src: "~plugins/datatable" }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -92,9 +92,9 @@ export default {
     extractCSS: true,
     extend(config, { isDev, isClient }) {
       config.node = {
-        fs: "empty",
+        fs: "empty"
       };
-    },
+    }
   },
 
   hooks: {
@@ -121,7 +121,7 @@ export default {
           );
           removeSync(generator.nuxt.options.generate.dir);
         }
-      },
-    },
-  },
+      }
+    }
+  }
 };

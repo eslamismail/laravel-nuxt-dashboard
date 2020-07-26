@@ -2,7 +2,7 @@ $(document).ready(function() {
   $("#basic-datatables").DataTable({});
 
   $("#multi-filter-select").DataTable({
-    pageLength: 5,
+    pageLength: 10,
     initComplete: function() {
       this.api()
         .columns()
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   // Add Row
   $("#add-row").DataTable({
-    pageLength: 5
+    pageLength: 10
   });
 
   var action =
