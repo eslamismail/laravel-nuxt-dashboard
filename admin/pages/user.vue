@@ -19,7 +19,7 @@ import DataTable from "../components/datatable";
 export default {
   layout: "app",
   head: {
-    title: "Dashboard Users"
+    title: "Dashboard Users",
   },
   components: { DataTable },
   created() {
@@ -28,7 +28,7 @@ export default {
     // }, 3000);
   },
   methods: {
-    addUser: function(e) {
+    addUser: function (e) {
       // console.log("event working");
       let lastID = this.data.length;
       this.data.push({
@@ -36,29 +36,29 @@ export default {
         name: "test",
         email: "test@test",
         created_at: moment().format("llll"),
-        updated_at: moment().format("llll")
+        updated_at: moment().format("llll"),
       });
     },
-    getUsers: function() {
+    getUsers: function () {
       axios
         .get("/users")
-        .then(response => {
+        .then((response) => {
           this.data = response.data.users;
-          this.data.forEach(item => {
+          this.data.forEach((item) => {
             item.id = item.id.toString();
             item.created_at = moment(item.created_at).format("llll");
             item.updated_at = moment(item.updated_at).format("llll");
           });
         })
-        .catch(error => {});
-    }
+        .catch((error) => {});
+    },
   },
   data() {
     return {
       data: [],
-      columns: ["id", "name", "email", "created_at", "updated_at"]
+      columns: ["id", "name", "email", "created_at"],
     };
-  }
+  },
 };
 </script>
 

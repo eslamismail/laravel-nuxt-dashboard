@@ -1,6 +1,8 @@
-// import VueGoodTable from "vue-good-table";
+// // import { VuejsDatatableFactory } from "vuejs-datatable";
 
+// import VueDataTables from "vue-data-tables";
 // import Vue from "vue";
+
 // export default ({ app, store, redirect }) => {
-//   Vue.use(VueGoodTable);
+//   Vue.use(VueDataTables);
 // };

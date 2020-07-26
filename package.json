@@ -12,12 +12,16 @@
         "lint": "eslint --fix --ext admin/.js,.vue client/"
     },
     "dependencies": {
+        "ant-design-vue": "^1.6.4",
         "axios": "^0.19.2",
         "css-loader": "^3.6.0",
         "dotenv": "^8.2.0",
         "fs-extra": "^9.0.1",
         "nuxt": "^2.0.0",
+        "reqwest": "^2.0.5",
         "v-datatable-light": "^0.8.1"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "@nuxtjs/vuetify": "^1.11.2"
+    }
 }

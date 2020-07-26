@@ -11,92 +11,61 @@
             </button>
           </div>
         </div>
+        <div class="w-75 ml-5">
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </div>
         <div class="card-body">
-          <div class="table-responsive">
-            <table id="basic-datatables" class="display table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th v-for="(item, index) in columns" :key="index">{{item.replace('_',' ')}}</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th v-for="(item, index) in columns" :key="index">{{item.replace('_',' ')}}</th>
-                  <th>Action</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr v-for="(item, index) in data" :key="index">
-                  <td v-for="(input, index) in columns" :key="index">{{item[input]}}</td>
-                  <td>
-                    <div class="form-button-action">
-                      <button
-                        type="button"
-                        data-toggle="tooltip"
-                        title
-                        class="btn btn-link btn-primary btn-lg"
-                        data-original-title="Edit Task"
-                      >
-                        <i class="fa fa-edit"></i>
-                      </button>
-                      <button
-                        type="button"
-                        data-toggle="tooltip"
-                        title
-                        class="btn btn-link btn-danger"
-                        data-original-title="Remove"
-                      >
-                        <i class="fa fa-times"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <v-data-table
+            :search="search"
+            :headers="headers"
+            :items="data"
+            :items-per-page="10"
+            class="table-bordered"
+          ></v-data-table>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { DataTable } from "v-datatable-light";
-
 export default {
-  props: ["tableTitle", "btnText", "data", "columns"],
-  components: {
-    DataTable
-  },
+  props: ["tableTitle", "data", "columns", "btnText"],
   head: {
     script: [
       {
         src: "/assets/js/datatables.js",
-        body: true
-      }
-    ]
+        body: true,
+      },
+    ],
   },
   data() {
     return {
-      headerFields: []
+      search: "",
+
+      headers: [],
     };
   },
   methods: {
-    add: function() {
+    add: function () {
       event.preventDefault();
       this.$emit("addRow");
-    }
+    },
   },
-  mounted() {
-    this.columns.forEach(item => {
-      console.log(item);
-      this.headerFields.push({ name: item, label: item, sortable: true });
+  async created() {
+    this.columns.forEach((item) => {
+      this.headers.push({
+        text: item.replace("_", " ").toUpperCase(),
+        value: item,
+      });
     });
-  }
+  },
 };
 </script>
 <style >
-th {
-  text-transform: capitalize;
-}
 </style>

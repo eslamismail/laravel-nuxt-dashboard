@@ -12,8 +12,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_plugin_2fc8fa72 from 'nuxt_plugin_plugin_2fc8fa72' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_axios_fb9c9a02 from 'nuxt_plugin_axios_fb9c9a02' // Source: ../admin/plugins/axios (mode: 'all')
 import nuxt_plugin_datatable_71e0c06d from 'nuxt_plugin_datatable_71e0c06d' // Source: ../admin/plugins/datatable (mode: 'all')
+import nuxt_plugin_antd_56c7a7b4 from 'nuxt_plugin_antd_56c7a7b4' // Source: ../admin/plugins/antd (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -56,7 +58,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"admin","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My majestic Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Fassets\u002Fimg\u002Ficon.ico"},{"href":"\u002Fassets\u002Fcss\u002Fbootstrap.min.css","rel":"stylesheet"},{"href":"\u002Fassets\u002Fcss\u002Fazzara.min.css","rel":"stylesheet"}],"script":[{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fwebfont\u002Fwebfont.min.js"},{"body":true,"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fjquery.3.2.1.min.js"},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fpopper.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fbootstrap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-1.12.1.custom\u002Fjquery-ui.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-touch-punch\u002Fjquery.ui.touch-punch.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-scrollbar\u002Fjquery.scrollbar.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fmoment\u002Fmoment.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart.js\u002Fchart.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery.sparkline\u002Fjquery.sparkline.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart-circle\u002Fcircles.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fdatatables\u002Fdatatables.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-notify\u002Fbootstrap-notify.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-toggle\u002Fbootstrap-toggle.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fjquery.vmap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fmaps\u002Fjquery.vmap.world.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fgmaps\u002Fgmaps.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fsweetalert\u002Fsweetalert.min.js","body":true}],"style":[]},
+    head: {"title":"admin","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My majestic Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Fassets\u002Fimg\u002Ficon.ico"},{"href":"\u002Fassets\u002Fcss\u002Fbootstrap.min.css","rel":"stylesheet"},{"href":"\u002Fassets\u002Fcss\u002Fazzara.min.css","rel":"stylesheet"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fwebfont\u002Fwebfont.min.js"},{"body":true,"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fjquery.3.2.1.min.js"},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fpopper.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fcore\u002Fbootstrap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-1.12.1.custom\u002Fjquery-ui.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-ui-touch-punch\u002Fjquery.ui.touch-punch.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery-scrollbar\u002Fjquery.scrollbar.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fmoment\u002Fmoment.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart.js\u002Fchart.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjquery.sparkline\u002Fjquery.sparkline.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fchart-circle\u002Fcircles.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fdatatables\u002Fdatatables.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-notify\u002Fbootstrap-notify.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fbootstrap-toggle\u002Fbootstrap-toggle.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fjquery.vmap.min.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fjqvmap\u002Fmaps\u002Fjquery.vmap.world.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fgmaps\u002Fgmaps.js","body":true},{"src":"\u002Fassets\u002Fjs\u002Fplugin\u002Fsweetalert\u002Fsweetalert.min.js","body":true}],"style":[]},
 
     store,
     router,
@@ -185,12 +187,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
+  if (typeof nuxt_plugin_plugin_2fc8fa72 === 'function') {
+    await nuxt_plugin_plugin_2fc8fa72(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_fb9c9a02 === 'function') {
     await nuxt_plugin_axios_fb9c9a02(app.context, inject)
   }
 
   if (typeof nuxt_plugin_datatable_71e0c06d === 'function') {
     await nuxt_plugin_datatable_71e0c06d(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_antd_56c7a7b4 === 'function') {
+    await nuxt_plugin_antd_56c7a7b4(app.context, inject)
   }
 
   // Lock enablePreview in context

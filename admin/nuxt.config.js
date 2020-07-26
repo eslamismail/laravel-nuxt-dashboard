@@ -76,11 +76,15 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~plugins/axios" }, { src: "~plugins/datatable" }],
+  plugins: [
+    { src: "~plugins/axios" },
+    { src: "~plugins/datatable" },
+    { src: "~plugins/antd" }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ["@nuxtjs/vuetify"],
   /*
    ** Nuxt.js modules
    */
